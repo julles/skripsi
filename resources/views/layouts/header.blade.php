@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Dashboard</title>
+  <title>{{ Setting::attribute('application_name') }}</title>
 
   <!-- Prevent the demo from appearing in search engines (REMOVE THIS) -->
   <meta name="robots" content="noindex">
@@ -32,7 +32,7 @@
     <button class="navbar-toggler pull-xs-left" type="button" data-toggle="sidebar" data-target="#sidebarLeft"><span class="material-icons">menu</span></button>
 
     <!-- Brand -->
-    <a href="index-2.html" class="navbar-brand"><i class="material-icons">school</i> LearnPlus</a>
+    <a href="index-2.html" class="navbar-brand"><!--i class="material-icons">school</i-->{{ Setting::attribute('application_name') }}</a>
 
     <!-- Search -->
     <form class="form-inline pull-xs-left hidden-sm-down">
