@@ -1,4 +1,4 @@
-<?php namespace Capsule\Setting;
+<?php namespace Capsule\Settings;
 
 use Illuminate\Support\Facades\Facade;
 

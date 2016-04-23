@@ -21,7 +21,8 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Capsule\\Setting\\": "capsule/src/setting/"
+            "Capsule\\Settings\\": "capsule/src/settings/",
+            "Capsule\\Helpers\\": "capsule/src/helpers/"
         }
     },
     "autoload-dev": {

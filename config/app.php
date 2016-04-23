@@ -154,7 +154,7 @@ return [
         /**
          * Capsule Service Provider
          */
-        Capsule\Setting\SettingProvider::class,
+        Capsule\Settings\SettingProvider::class,
 
     ],
 
@@ -201,7 +201,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Setting' => Capsule\Setting\SettingFacade::class,
+        'Setting' => Capsule\Settings\SettingFacade::class,
 
     ],
 
