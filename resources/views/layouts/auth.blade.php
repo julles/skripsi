@@ -20,12 +20,6 @@
 
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 
-</head>
-
-<body class="login">
-
-  @yield('content')
-  
   <!-- jQuery -->
   <script src="{{ asset(null) }}assets/vendor/jquery.min.js"></script>
 
@@ -40,5 +34,13 @@
   <script src="{{ asset(null) }}assets/js/main.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
   @yield('script')
+  
+  
+</head>
+
+<body class="login">
+
+  @yield('content')
+  
   </body>
 </html>

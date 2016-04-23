@@ -13,32 +13,36 @@
           <p class="card-subtitle">Create a new account</p>
         </div>
         <div class="p-a-2">
-          <form action="http://learnplus.themekit.io/index.html" method="get">
+          {!! Form::open() !!}
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Full Name">
+              {!! Form::text('name',null,['placeholder'=>'Full Name','class'=>'form-control']) !!}
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="Email">
+              {!! Form::text('email',null,['placeholder'=>'Email','class'=>'form-control']) !!}
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password">
+              {!! Form::password('password',['placeholder'=>'Password','class'=>'form-control']) !!}
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" placeholder="Confirm Password">
+                {!! Form::password('verify_password',['placeholder'=>'Verify Password','class'=>'form-control']) !!}
             </div>
-            <div class="form-group center">
+            <!--div class="form-group center">
               <label class="c-input c-checkbox">
                 <input type="checkbox" checked>
                 <span class="c-indicator"></span> I agree to the <a href="#">Terms of Use</a>
               </label>
-            </div>
+            </div-->
             <p class="center">
               <button type="submit" class="btn btn-primary btn-rounded btn-block">Sign Up</button>
             </p>
-            <div class="center">Already signed up? <a href="login.html">Log in</a></div>
-          </form>
+            <div class="center"><a href="{{ url('auth/login') }}">Login</a></div>
+          {!! Form::close() !!}
         </div>
       </div>
     </div>
   </div>
-@endsection
+  {!! Helper::flashValidation() !!}
+  {!! Helper::flashSuccess() !!}
+
+ @endsection
+

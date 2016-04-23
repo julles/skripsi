@@ -34,7 +34,7 @@
           </form>
         </div>
         <div class="card-footer center bg-white">
-          Not yet a student? <a href="sign-up.html">Sign up</a>
+          Belum punya akun? <a href="{{ url('auth/sign-up') }}">Daftar</a>
         </div>
       </div>
     </div>
