@@ -24,5 +24,5 @@ class User extends Authenticatable
     //     'password', 'remember_token',
     // ];
 
-    public $guarded = [];
+    public $guarded = ['verify_password'];
 }
