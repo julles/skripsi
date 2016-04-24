@@ -2,6 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 use Capsule\Settings\Setting;
+use Auth;
 
 class SettingProvider extends ServiceProvider
 {

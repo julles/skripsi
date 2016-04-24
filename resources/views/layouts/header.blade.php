@@ -85,7 +85,9 @@
       <!-- User dropdown -->
       <li class="nav-item dropdown">
         <a class="nav-link active dropdown-toggle p-a-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false">
-          <img src="{{ asset(null) }}assets/images/people/50/guy-6.jpg" alt="Avatar" class="img-circle" width="40">
+        @if(!empty(user()->image))  
+          <img src="{{ asset('contents/thumbnails/'.user()->image) }}" alt="Avatar" class="img-circle" width="40">
+        @endif
         </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-menu-list" aria-labelledby="Preview">
           <a class="dropdown-item" href="account-edit.html"><i class="material-icons md-18">lock</i> <span class="icon-text">Edit Account</span></a>

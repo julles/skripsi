@@ -25,7 +25,10 @@
             "App\\": "app/",
             "Capsule\\Settings\\": "capsule/src/settings/",
             "Capsule\\Helpers\\": "capsule/src/helpers/"
-        }
+        },
+        "files":[
+            "capsule/src/capsule.php"
+        ]
     },
     "autoload-dev": {
         "classmap": [

@@ -19,7 +19,7 @@ class ProfileController extends Controller
 
     public function getIndex()
     {
-    	$model = $this->model->findOrFail(auth()->user()->id);
+        $model = $this->model->findOrFail(auth()->user()->id);
 
     	return view('profile' ,compact('model'));
     }
