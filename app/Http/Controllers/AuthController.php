@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use Auth;
+use Helper;
+use Setting;
 
 class AuthController extends Controller
 {
@@ -37,7 +39,14 @@ class AuthController extends Controller
 
         $inputs['password'] = \Hash::make($request->password);
 
-        $this->user->create($inputs);
+        $user = $this->user->create($inputs);
+
+        $url = url('auth/confirmation/'.$user->id.'/'.Helper::encrypt($user->id));
+
+        \Mail::send('auth.email_confirmation' , ['user' => $user,'url' => $url] , function($m) use ($user){
+            $m->from('no-reply@'.Setting::attribute('domain'));
+            $m->to($user->email)->subject('Account Confirmation');
+        });
 
         return redirect()->back()->withSuccess('successful registration, please check your email for confirmation');
     }
@@ -75,5 +84,28 @@ class AuthController extends Controller
         Auth::logout();
 
         return redirect('auth/login');
+    }
+
+    public function getConfirmation($id,$value)
+    {
+        $cek = Helper::encrypt($id);
+
+        if($cek === $value)
+        {
+            $model = $this->user->findOrFail($id);
+            
+            if($model->status == 'y')
+            {
+                abort(404);
+            }    
+            
+            $model->status = 'y';
+
+            $model->update();
+
+            Auth::loginUsingId($model->id);
+
+            return redirect('/')->withSuccess('Account Confirmation Success');
+        }
     }
 }

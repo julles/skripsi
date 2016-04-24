@@ -91,4 +91,9 @@ class Helper
 			]);
 		}
 	}
+
+	public function encrypt($value)
+	{
+		return md5(md5(md5(md5('MUHAMADREZAABDULROHIM'.$value))));
+	}
 }
