@@ -71,7 +71,7 @@
         <div class="dropdown-menu dropdown-menu-right dropdown-menu-list" aria-labelledby="Preview">
           <a class="dropdown-item" href="account-edit.html"><i class="material-icons md-18">lock</i> <span class="icon-text">Edit Account</span></a>
           <a class="dropdown-item" href="profile.html"><i class="material-icons md-18">person</i> <span class="icon-text">Public Profile</span></a>
-          <a class="dropdown-item" href="login.html">Logout</a>
+          <a class="dropdown-item" href="{{ url('auth/logout') }}">Logout</a>
         </div>
       </li>
       <!-- // END User dropdown -->

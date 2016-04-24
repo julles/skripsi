@@ -1,7 +1,7 @@
 <?php namespace Capsule\Settings;
 
 use Illuminate\Support\ServiceProvider;
-use Capsule\Setting\Setting;
+use Capsule\Settings\Setting;
 
 class SettingProvider extends ServiceProvider
 {

@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
 use App\User;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -46,5 +45,35 @@ class AuthController extends Controller
     public function getLogin()
     {
     	return view('auth.login');
+    }
+
+    public function postLogin(Request $request)
+    {
+        $rules = [
+            'email'     => 'required|email',
+            'password'  => 'required'
+        ];
+        
+        $this->validate($request,$rules);
+
+        $auth = Auth::attempt([
+            'email'     => $request->email,
+            'password'  => $request->password,
+            'status'    => 'y',
+        ]);
+
+        if($auth)
+        {
+            return redirect('/');
+        }else{
+            return redirect()->back()->withError('Username or Password wrong!')->withInput();
+        }
+    }
+
+    public function getLogout()
+    {
+        Auth::logout();
+
+        return redirect('auth/login');
     }
 }

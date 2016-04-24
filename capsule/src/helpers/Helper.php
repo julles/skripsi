@@ -65,4 +65,30 @@ class Helper
 			]);
 		}
 	}
+
+	public function flashInfo()
+	{
+		if(Session::has('info'))
+		{
+			return $this->flash([
+				'type'		=> 'info',
+				'title'		=> 'info',
+				'text'		=> Session::get('info'),
+				'html'		=> true,
+			]);
+		}
+	}
+
+	public function flashError()
+	{
+		if(Session::has('error'))
+		{
+			return $this->flash([
+				'type'		=> 'error',
+				'title'		=> 'Error',
+				'text'		=> Session::get('error'),
+				'html'		=> true,
+			]);
+		}
+	}
 }

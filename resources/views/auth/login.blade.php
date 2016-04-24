@@ -14,12 +14,12 @@
           <p class="card-subtitle">Access your account</p>
         </div>
         <div class="p-a-2">
-          <form action="http://learnplus.themekit.io/index.html" method="get">
+          {!! Form::open() !!}
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="Email Address">
+              {!! Form::text('email',null,['placeholder'=>'Email','class'=>'form-control']) !!}
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password">
+              {!! Form::password('password',['placeholder'=>'Password','class'=>'form-control']) !!}
             </div>
             <div class="form-group ">
               <button type="submit" class="btn  btn-primary  btn-block btn-rounded">
@@ -31,7 +31,7 @@
                 <small>Forgot Password?</small>
               </a>
             </div>
-          </form>
+          {!! Form::close() !!}
         </div>
         <div class="card-footer center bg-white">
           Belum punya akun? <a href="{{ url('auth/sign-up') }}">Daftar</a>
@@ -39,4 +39,6 @@
       </div>
     </div>
   </div>
+  {!! Helper::flashValidation() !!}
+  {!! Helper::flashError() !!}
   @endsection
