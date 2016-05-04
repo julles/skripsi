@@ -4,7 +4,7 @@ use Illuminate\Support\ServiceProvider;
 use Capsule\Settings\Setting;
 use Auth;
 
-class SettingProvider extends ServiceProvider
+class SettingCapsuleProvider extends ServiceProvider
 {
 	public function boot()
 	{
@@ -17,7 +17,7 @@ class SettingProvider extends ServiceProvider
 		$dirPath = __dir__.'/capsule_setting.php';
 		if(file_exists($configPath))
 		{
-			$this->mergeConfigFrom($config_path,'setting');
+			$this->mergeConfigFrom($configPath,'setting');
 		}else{
 			$this->mergeConfigFrom($dirPath,'setting');
 		}
