@@ -21,10 +21,9 @@
   <!-- App CSS -->
   <link type="text/css" href="{{ asset(null) }}assets/css/style.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
-
   <!-- jQuery -->
   <script src="{{ asset(null) }}assets/vendor/jquery.min.js"></script>
-  
+  <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
   <!-- Bootstrap -->
   <script src="{{ asset(null) }}assets/vendor/tether.min.js"></script>
   <script src="{{ asset(null) }}assets/vendor/bootstrap.min.js"></script>

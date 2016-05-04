@@ -12,8 +12,7 @@ class Team extends Model
     public function rules()
     {
     	return [
-    		'title'		=> 'required',
-    		'owner_id'	=> 'required',
+    		'name'		=> 'required',
     		'avatar'	=> 'image|max:1000',
     	];
     }
