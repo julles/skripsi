@@ -153,10 +153,11 @@ return [
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
         /**
          * Capsule Service Provider
          */
-        Capsule\Settings\SettingProvider::class,
+        Capsule\Settings\SettingCapsuleProvider::class,
         Capsule\Helpers\HelperProvider::class,
     ],
 
@@ -208,7 +209,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Setting' => Capsule\Settings\SettingFacade::class,
         'Helper' => Capsule\Helpers\HelperFacade::class,
-
+        'Table' => Yajra\Datatables\Facades\Datatables::class,
     ],
 
 ];
