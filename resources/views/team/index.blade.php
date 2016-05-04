@@ -15,17 +15,33 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Name</th>
+              <th width="30%">#</th>
+              <th width="35%">Name</th>
+              <th width="35%">Manage</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="table-success">
-              <td>Column content</td>
-            </tr>
+            <?php
+            $no = 0;
+            ?>
+            @foreach($teams as $team)
+            <?php
+            $no++;
+            ?>  
+              <tr class="{{ helper()->zebra($no) }}">
+                <td><img class = 'img-circle' src = "{{ asset('contents/thumbnails/'.$team->avatar) }}" /></td>
+                <td>{{ $team->name }}</td>
+                <td><a href = "{{ url('team/manage/'.$team->slug) }}" class = 'btn btn-danger btn-sm'>Manage</a></td>
+              </tr>
+            @endforeach
           </tbody>
         </table>
       </div>
-
+      <div class="col-sm-7">
+        <div class="dataTables_paginate paging_simple_numbers" id="datatable-example_paginate">
+          {!! $pagination->render() !!}
+         </div>
+      </div>
     </div>
   </div>
   {!! Helper::flashSuccess() !!}

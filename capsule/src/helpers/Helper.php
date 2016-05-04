@@ -96,4 +96,14 @@ class Helper
 	{
 		return md5(md5(md5(md5('MUHAMADREZAABDULROHIM'.$value))));
 	}
+
+	public function zebra($no)
+	{
+		if($no % 2 == 0)
+		{
+			return 'table-success';
+		}else{
+			return 'table-danger';
+		}
+	}
 }

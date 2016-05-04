@@ -1,7 +1,10 @@
-<?php
-
-namespace App\Http\Controllers;
-
+<?php namespace App\Http\Controllers;
+/**
+ * Manage Team Controller Here!!
+ *
+ * Author : Muhamad Reza Abdul Rohim <reza.wikrama3@gmailc.com>
+ * 
+ */
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -26,10 +29,13 @@ class TeamController extends Controller
 
     public function getIndex()
     {
-    	$teams = $this->model->whereOwnerId(user()->id)->paginate(1);
+    	$teams = $this->model->whereOwnerId(user()->id)->paginate(5);
+
+    	$pagination = clone $teams;
 
     	return view('team.index' , [
-    		'model'	=> $this->model,
+    		'teams'	=> $teams,
+    		'pagination' => $pagination,
     	]);
     }
 
